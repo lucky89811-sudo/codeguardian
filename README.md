@@ -1,11 +1,16 @@
 # CodeGuardian 🛡️
 ### Explainable AI Security Reviews for GitHub Pull Requests
 
-[![CI Tests](https://github.com/guardian-security/codeguardian/actions/workflows/tests.yml/badge.svg)](https://github.com/guardian-security/codeguardian/actions/workflows/tests.yml)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-codeguardian-00F2FE?style=for-the-badge&logo=vercel&logoColor=black)](https://codeguardian-sandy-two.vercel.app)
+[![Live API](https://img.shields.io/badge/Live%20API-FastAPI-0284c7?style=for-the-badge&logo=fastapi&logoColor=white)](https://codeguardian-production-0b62.up.railway.app/docs)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![OWASP Top 10](https://img.shields.io/badge/OWASP-Top%2010%3A2025-blue.svg)](https://owasp.org)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://www.python.org/)
 [![React 18](https://img.shields.io/badge/React-18-cyan.svg)](https://react.dev/)
+
+> 🚀 **Live Production Console**: [https://codeguardian-sandy-two.vercel.app](https://codeguardian-sandy-two.vercel.app)  
+> ⚡ **Live API Service**: [https://codeguardian-production-0b62.up.railway.app/docs](https://codeguardian-production-0b62.up.railway.app/docs)
 
 CodeGuardian is a developer-first security review cockpit that combines **deterministic static code analysis (Semgrep + 15 custom Python AST rules)** with **Google Gemini explainable AI (`google-genai`)** to deliver transparent, reproducible, and verifiable pull-request audits.
 
