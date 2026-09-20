@@ -2,22 +2,18 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies including git and curl
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     curl \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Semgrep CLI
 RUN pip install --no-cache-dir semgrep
 
-# Copy backend requirements and install
-COPY requirements.txt .
+COPY backend/requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application source code
-COPY . .
+COPY backend/ .
 
 EXPOSE 8000
 
