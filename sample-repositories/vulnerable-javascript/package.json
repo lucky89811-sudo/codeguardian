@@ -1,0 +1,8 @@
+{
+  "name": "vulnerable-ecommerce-js",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "*",
+    "cors": ">=2.8.0"
+  }
+}

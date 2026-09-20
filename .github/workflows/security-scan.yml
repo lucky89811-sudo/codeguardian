@@ -1,0 +1,18 @@
+name: Security & SAST Scanning
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  semgrep-audit:
+    name: Semgrep Static Analysis
+    runs-on: ubuntu-latest
+    container:
+      image: returntocorp/semgrep
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Semgrep Security Audit
+        run: semgrep scan --config auto --error

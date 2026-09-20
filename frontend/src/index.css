@@ -1,0 +1,402 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-base: #06090e;
+    --color-bg-surface: #0b1017;
+    --color-bg-subtle: #121824;
+    --color-border-subtle: rgba(255, 255, 255, 0.07);
+    --color-border-focus: rgba(0, 242, 254, 0.4);
+  }
+
+  body {
+    background-color: #05080d;
+    color: #e2e8f0;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  /* Crisp tabular figures for metrics & numbers */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Precision Grid Background */
+.bg-grid-pattern {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.12), transparent);
+}
+
+/* Polished High-Craft Glass Panel */
+.craft-panel {
+  background: linear-gradient(135deg, rgba(16, 23, 36, 0.75) 0%, rgba(10, 15, 24, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.craft-panel-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.craft-panel-hover:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.45), 0 0 20px -2px rgba(6, 182, 212, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Subtle Glowing Borders */
+.border-glow-cyan {
+  border-color: rgba(0, 242, 254, 0.4);
+  box-shadow: 0 0 16px -2px rgba(0, 242, 254, 0.25), inset 0 0 8px -2px rgba(0, 242, 254, 0.1);
+}
+
+.border-glow-red {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 16px -2px rgba(239, 68, 68, 0.25), inset 0 0 8px -2px rgba(239, 68, 68, 0.1);
+}
+
+/* Polished Code Viewer & Diff Gutter */
+.diff-line-del {
+  background-color: rgba(239, 68, 68, 0.12);
+  border-left: 3px solid #ef4444;
+}
+
+.diff-line-add {
+  background-color: rgba(16, 185, 129, 0.12);
+  border-left: 3px solid #10b981;
+}
+
+/* Minimal Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #070a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   LIGHT MODE DESIGN SPECIFICATION
+   Applied when dark class is removed from <html>.
+   Maintains high-craft Linear/GitHub/Datadog aesthetic in light theme.
+   ========================================================================== */
+
+html:not(.dark) {
+  color-scheme: light;
+}
+
+html:not(.dark) body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Base Typography Hierarchy in Light Mode */
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4,
+html:not(.dark) h5,
+html:not(.dark) h6 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) p,
+html:not(.dark) label {
+  color: #334155 !important;
+}
+
+/* Primary and High-Emphasis Text */
+html:not(.dark) [class*="text-slate-100"],
+html:not(.dark) [class*="text-slate-200"],
+html:not(.dark) [class*="text-gray-100"],
+html:not(.dark) [class*="text-gray-200"] {
+  color: #0f172a !important;
+}
+
+/* Convert all white text to deep dark slate except on explicit dark/colored buttons */
+html:not(.dark) [class*="text-white"] {
+  color: #0f172a !important;
+}
+
+/* Inverted buttons & special elements preserve dark text or white on saturated backgrounds */
+html:not(.dark) button[class*="bg-cyan-electric"],
+html:not(.dark) button[class*="bg-cyan-electric"] *,
+html:not(.dark) .btn-primary {
+  color: #070a0f !important;
+  background-color: #00F2FE !important;
+}
+
+html:not(.dark) button[class*="bg-red-500"],
+html:not(.dark) button[class*="bg-red-600"] {
+  color: #ffffff !important;
+}
+
+/* Secondary and Muted Text */
+html:not(.dark) [class*="text-slate-300"],
+html:not(.dark) [class*="text-gray-300"] {
+  color: #1e293b !important;
+}
+
+html:not(.dark) [class*="text-slate-400"],
+html:not(.dark) [class*="text-gray-400"] {
+  color: #475569 !important;
+}
+
+html:not(.dark) [class*="text-slate-500"] {
+  color: #64748b !important;
+}
+
+html:not(.dark) [class*="text-slate-600"] {
+  color: #94a3b8 !important;
+}
+
+/* Surfaces and Obsidian Colors (including Tailwind opacity modifiers like /90, /60, /40) */
+html:not(.dark) [class*="bg-obsidian-950"] {
+  background-color: #f8fafc !important;
+}
+
+html:not(.dark) [class*="bg-obsidian-900"] {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) [class*="bg-obsidian-850"] {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) [class*="bg-obsidian-800"] {
+  background-color: #e2e8f0 !important;
+}
+
+html:not(.dark) [class*="bg-obsidian-700"] {
+  background-color: #cbd5e1 !important;
+}
+
+html:not(.dark) [class*="bg-black"] {
+  background-color: #f1f5f9 !important;
+}
+
+/* Glass Panels */
+html:not(.dark) .craft-panel {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+}
+
+html:not(.dark) .craft-panel-hover:hover {
+  border-color: rgba(6, 182, 212, 0.6) !important;
+  box-shadow: 0 8px 30px -4px rgba(15, 23, 42, 0.1), 0 0 20px -2px rgba(6, 182, 212, 0.15) !important;
+}
+
+/* Borders */
+html:not(.dark) [class*="border-white"] {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) [class*="border-slate-800"] {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) [class*="border-slate-700"] {
+  border-color: #cbd5e1 !important;
+}
+
+/* Subtle background tints */
+html:not(.dark) [class*="bg-white/"] {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+html:not(.dark) [class*="hover:bg-white/"]:hover {
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Electric Cyan Brand Accents */
+html:not(.dark) .text-cyan-electric {
+  color: #0891b2 !important;
+}
+
+html:not(.dark) [class*="text-cyan-400"],
+html:not(.dark) [class*="text-cyan-300"] {
+  color: #0284c7 !important;
+}
+
+html:not(.dark) .bg-cyan-electric\/10 {
+  background-color: rgba(8, 145, 178, 0.12) !important;
+}
+
+html:not(.dark) [class*="border-cyan-electric"] {
+  border-color: rgba(8, 145, 178, 0.4) !important;
+}
+
+/* High-Contrast Severity Badges in Light Mode */
+html:not(.dark) [class*="bg-red-950"] {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+  border-color: #fca5a5 !important;
+}
+
+html:not(.dark) [class*="bg-orange-950"] {
+  background-color: #ffedd5 !important;
+  color: #9a3412 !important;
+  border-color: #fdba74 !important;
+}
+
+html:not(.dark) [class*="bg-amber-950"] {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #fcd34d !important;
+}
+
+html:not(.dark) [class*="bg-emerald-950"] {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  border-color: #6ee7b7 !important;
+}
+
+html:not(.dark) [class*="bg-blue-950"] {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  border-color: #93c5fd !important;
+}
+
+html:not(.dark) [class*="bg-violet-950"] {
+  background-color: #ede9fe !important;
+  color: #5b21b6 !important;
+  border-color: #ddd6fe !important;
+}
+
+html:not(.dark) [class*="bg-cyan-950"] {
+  background-color: #cffafe !important;
+  color: #0e7490 !important;
+  border-color: #a5f3fc !important;
+}
+
+/* Threat Text Colors */
+html:not(.dark) .text-threat-critical {
+  color: #b91c1c !important;
+}
+
+html:not(.dark) .text-threat-high {
+  color: #c2410c !important;
+}
+
+html:not(.dark) .text-threat-medium {
+  color: #b45309 !important;
+}
+
+html:not(.dark) .text-threat-low {
+  color: #047857 !important;
+}
+
+html:not(.dark) .text-threat-info {
+  color: #1d4ed8 !important;
+}
+
+/* AI Highlights */
+html:not(.dark) .text-ai-soft,
+html:not(.dark) [class*="text-violet-300"],
+html:not(.dark) [class*="text-violet-400"] {
+  color: #6d28d9 !important;
+}
+
+html:not(.dark) [class*="bg-ai-violet"] {
+  background-color: rgba(109, 40, 217, 0.1) !important;
+  border-color: rgba(109, 40, 217, 0.3) !important;
+}
+
+/* Code Snippets & Diff Blocks */
+html:not(.dark) code {
+  color: #0f172a !important;
+}
+
+html:not(.dark) pre {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .diff-line-del {
+  background-color: #fee2e2 !important;
+  border-left: 3px solid #dc2626 !important;
+  color: #991b1b !important;
+}
+
+html:not(.dark) .diff-line-add {
+  background-color: #dcfce7 !important;
+  border-left: 3px solid #16a34a !important;
+  color: #166534 !important;
+}
+
+/* Forms, Inputs, & Keyboard shortcuts */
+html:not(.dark) input,
+html:not(.dark) textarea,
+html:not(.dark) select {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html:not(.dark) kbd {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Scrollbars & Background Pattern */
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+html:not(.dark) .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px) !important;
+}
+
+html:not(.dark) .bg-radial-gradient {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(8, 145, 178, 0.08), transparent) !important;
+}
+

@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Environment Variables & Secrets
+.env
+.env.local
+*.local
+
+# Build Outputs
+dist/
+build/
+*.egg-info/
+
+# Databases & Cache
+*.db
+*.sqlite3
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor & OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,97 @@
+{
+  "CWE-89": {
+    "owasp_category": "A05:2025",
+    "title": "Injection",
+    "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+  },
+  "CWE-78": {
+    "owasp_category": "A05:2025",
+    "title": "Injection",
+    "description": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+  },
+  "CWE-79": {
+    "owasp_category": "A05:2025",
+    "title": "Injection",
+    "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+  },
+  "CWE-95": {
+    "owasp_category": "A05:2025",
+    "title": "Injection",
+    "description": "Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+  },
+  "CWE-22": {
+    "owasp_category": "A01:2025",
+    "title": "Broken Access Control",
+    "description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+  },
+  "CWE-284": {
+    "owasp_category": "A01:2025",
+    "title": "Broken Access Control",
+    "description": "Improper Access Control"
+  },
+  "CWE-862": {
+    "owasp_category": "A01:2025",
+    "title": "Broken Access Control",
+    "description": "Missing Authorization on Route or Action"
+  },
+  "CWE-798": {
+    "owasp_category": "A07:2025",
+    "title": "Identification and Authentication Failures",
+    "description": "Use of Hard-coded Credentials"
+  },
+  "CWE-259": {
+    "owasp_category": "A07:2025",
+    "title": "Identification and Authentication Failures",
+    "description": "Use of Hard-coded Password"
+  },
+  "CWE-384": {
+    "owasp_category": "A07:2025",
+    "title": "Identification and Authentication Failures",
+    "description": "Session Fixation or Insecure Token Handling"
+  },
+  "CWE-327": {
+    "owasp_category": "A02:2025",
+    "title": "Cryptographic Failures",
+    "description": "Use of a Broken or Risky Cryptographic Algorithm"
+  },
+  "CWE-328": {
+    "owasp_category": "A02:2025",
+    "title": "Cryptographic Failures",
+    "description": "Use of Weak Hash"
+  },
+  "CWE-295": {
+    "owasp_category": "A02:2025",
+    "title": "Cryptographic Failures",
+    "description": "Improper Certificate Validation"
+  },
+  "CWE-1395": {
+    "owasp_category": "A03:2025",
+    "title": "Software Supply Chain Failures",
+    "description": "Dependency on Vulnerable Third-Party Component"
+  },
+  "CWE-1104": {
+    "owasp_category": "A03:2025",
+    "title": "Software Supply Chain Failures",
+    "description": "Use of Unmaintained or Unpinned Third-Party Components"
+  },
+  "CWE-942": {
+    "owasp_category": "A06:2025",
+    "title": "Security Misconfiguration",
+    "description": "Permissive Cross-Origin Resource Sharing (CORS) Policy"
+  },
+  "CWE-16": {
+    "owasp_category": "A06:2025",
+    "title": "Security Misconfiguration",
+    "description": "Configuration Vulnerability (e.g. Debug Mode in Production)"
+  },
+  "CWE-434": {
+    "owasp_category": "A08:2025",
+    "title": "Software and Data Integrity Failures",
+    "description": "Unrestricted Upload of File with Dangerous Type"
+  },
+  "CWE-330": {
+    "owasp_category": "A09:2025",
+    "title": "Security Logging and Alerting Failures / Insecure Randomness",
+    "description": "Use of Insufficiently Random Values"
+  }
+}
