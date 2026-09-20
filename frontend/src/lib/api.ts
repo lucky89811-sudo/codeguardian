@@ -8,9 +8,8 @@ import {
   ScanAnalytics,
 } from '../types';
 
-const API_BASE = import.meta.env.VITE_API_URL 
-  ? `${import.meta.env.VITE_API_URL.replace(/\/+$/, '')}/api` 
-  : '/api';
+const rawApiUrl = (import.meta as any)?.env?.VITE_API_URL;
+const API_BASE = rawApiUrl ? `${rawApiUrl.replace(/\/+$/, '')}/api` : '/api';
 
 export class ApiError extends Error {
   constructor(public status: number, message: string, public details?: any) {
